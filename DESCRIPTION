@@ -1,16 +1,22 @@
 Package: targetedordertest
-Title: What the Package Does (One Line, Title Case)
+Title: Implements Targeted Tests for Bias in Orderings
 Version: 0.0.0.9000
 Authors@R: 
-    person(given = "First",
-           family = "Last",
+    person(given = "Sheridan",
+           family = "Grant",
            role = c("aut", "cre"),
-           email = "first.last@example.com",
-           comment = c(ORCID = "YOUR-ORCID-ID"))
-Description: What the package does (one paragraph).
-License: `use_mit_license()`, `use_gpl3_license()` or friends to
-    pick a license
+           email = "SheridanLGrant@gmail.com",
+           comment = c(ORCID = "0000-0001-8952-2910"))
+Description: This package implements the Linear Concordance and
+    Rank Compatibility tests for non-uniformity of distribution
+    over permutations, found in "Targeted testing for bias in
+    order assignment, with an application to Texas election
+    ballots" (Grant, Perlman, and Grant, 2020).
+License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.1.1
+Imports: 
+    gtools,
+    stats
