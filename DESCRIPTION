@@ -1,5 +1,5 @@
 Package: targetedordertest
-Title: Implements Targeted Tests for Bias in Orderings
+Title: Targeted Tests for Bias in Orderings
 Version: 0.0.0.9000
 Authors@R: 
     person(given = "Sheridan",
