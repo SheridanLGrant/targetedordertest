@@ -1,5 +1,7 @@
 ---
 output: github_document
+editor_options: 
+  chunk_output_type: console
 ---
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
@@ -18,7 +20,7 @@ knitr::opts_chunk$set(
 <!-- badges: start -->
 <!-- badges: end -->
 
-Targeted tests for orderings seek to reject the null hypothesis of uniform randomness, drawing statistical power from a "targeted" alternative hypothesis that specifies the type of non-randomness expected in the orderings. The Linear Concordance and Rank Compatibility tests of [https://www.sciencedirect.com/science/article/abs/pii/S0378375818300867](Grant, Perlman, and Grant, 2020) are implemented in this package.
+Targeted tests for orderings seek to reject the null hypothesis of uniform randomness, drawing statistical power from a "targeted" alternative hypothesis that specifies the type of non-randomness expected in the orderings. The Linear Concordance and Rank Compatibility tests of [Grant, Perlman, and Grant, 2020](https://www.sciencedirect.com/science/article/abs/pii/S0378375818300867) are implemented in this package.
 
 ## Installation
 
@@ -32,19 +34,25 @@ Until this package is accepted into CRAN, you can install it with `install_githu
 
 ## Example
 
-This is a basic example which shows you how to solve a common problem:
+The following code reproduces the results for the Railroad Commissioner race in Table 7 of Grant, Perlman, and Grant, 2020.
 
-```{r example}
+```{r, eval=F}
+library(tidyverse)
 library(targetedordertest)
-## basic example code
+
+railroadcommissioner %>%
+  drop_na() %>%
+  select(-County) ->
+  rrc
+
+alt <- list(list(c('Berger', 'Boyuls', 'Sitton'),
+                 c('Christian')))
+
+rank_compatibility(rrc, alt)
+rank_compatibility(rrc, alt, cushion = 10)
+
+scores <- c(2, 2, 4, 2)
+
+linear_concordance(rrc, scores, 'uni')
 ```
 
-What is special about using `README.Rmd` instead of just `README.md`? You can include R chunks like so:
-
-```{r cars}
-summary(cars)
-```
-
-You'll still need to render `README.Rmd` regularly, to keep `README.md` up-to-date.
-
-You can also embed plots.

@@ -9,9 +9,9 @@ rank_compatibility(.data, alternatives, cushion = 1)
 \arguments{
 \item{.data}{data.frame}
 
-\item{cushion}{double}
+\item{alternatives}{list}
 
-\item{alternative}{list}
+\item{cushion}{double}
 }
 \value{
 list
@@ -19,5 +19,7 @@ list
 \description{
 Given a set of orderings, an alternative preference
 criterion, and a cushion for the number of biased
-agents, compute the p value for the RC test.
+agents, compute the p value for the RC test. Note that
+alternative must be a list of lists of character
+vectors.
 }

@@ -11,8 +11,8 @@ Targeted tests for orderings seek to reject the null hypothesis of
 uniform randomness, drawing statistical power from a “targeted”
 alternative hypothesis that specifies the type of non-randomness
 expected in the orderings. The Linear Concordance and Rank Compatibility
-tests of
-[https://www.sciencedirect.com/science/article/abs/pii/S0378375818300867](Grant,%20Perlman,%20and%20Grant,%202020)
+tests of [Grant, Perlman, and
+Grant, 2020](https://www.sciencedirect.com/science/article/abs/pii/S0378375818300867)
 are implemented in this package.
 
 ## Installation
@@ -30,28 +30,25 @@ Until this package is accepted into CRAN, you can install it with
 
 ## Example
 
-This is a basic example which shows you how to solve a common problem:
+The following code reproduces the results for the Railroad Commissioner
+race in Table 7 of Grant, Perlman, and Grant, 2020.
 
 ``` r
+library(tidyverse)
 library(targetedordertest)
-## basic example code
+
+railroadcommissioner %>%
+  drop_na() %>%
+  select(-County) ->
+  rrc
+
+alt <- list(list(c('Berger', 'Boyuls', 'Sitton'),
+                 c('Christian')))
+
+rank_compatibility(rrc, alt)
+rank_compatibility(rrc, alt, cushion = 10)
+
+scores <- c(2, 2, 4, 2)
+
+linear_concordance(rrc, scores, 'uni')
 ```
-
-What is special about using `README.Rmd` instead of just `README.md`?
-You can include R chunks like so:
-
-``` r
-summary(cars)
-#>      speed           dist       
-#>  Min.   : 4.0   Min.   :  2.00  
-#>  1st Qu.:12.0   1st Qu.: 26.00  
-#>  Median :15.0   Median : 36.00  
-#>  Mean   :15.4   Mean   : 42.98  
-#>  3rd Qu.:19.0   3rd Qu.: 56.00  
-#>  Max.   :25.0   Max.   :120.00
-```
-
-You’ll still need to render `README.Rmd` regularly, to keep `README.md`
-up-to-date.
-
-You can also embed plots.

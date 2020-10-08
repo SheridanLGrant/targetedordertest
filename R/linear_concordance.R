@@ -37,5 +37,5 @@ linear_concordance <- function(.data, scores, direction = 'uni') {
   } else {
     stop('direction must be either "uni" or "bi"')
   }
-  return(pval = 1 - pnorm(z))
+  return(pval = 1 - stats::pnorm(z))
 }

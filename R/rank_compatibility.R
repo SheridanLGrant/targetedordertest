@@ -36,10 +36,12 @@ expand <- function(vectors) {
 #'
 #' Given a set of orderings, an alternative preference
 #' criterion, and a cushion for the number of biased
-#' agents, compute the p value for the RC test.
+#' agents, compute the p value for the RC test. Note that
+#' alternative must be a list of lists of character
+#' vectors.
 #'
 #' @param .data data.frame
-#' @param alternative list
+#' @param alternatives list
 #' @param cushion double
 #'
 #' @return list
@@ -56,7 +58,7 @@ rank_compatibility <- function(.data,
 
   # compute compatible orderings and their null probability
   Bs <- lapply(alternatives,
-               function(x) apply(expand(x), 2, as.character))
+               function(x) expand(x))
   p0 <- sum(sapply(Bs, function(B) nrow(B)/factorial(m)))
 
   tauHats <- numeric(length(alternatives))

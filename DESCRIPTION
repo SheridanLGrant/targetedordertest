@@ -19,7 +19,8 @@ Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.1.1
 Imports: 
     gtools,
-    stats
+    stats,
+    magrittr
 URL: https://github.com/SheridanLGrant/targetedordertest
 BugReports: https://github.com/SheridanLGrant/targetedordertest/issues
 Depends: 
