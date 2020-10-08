@@ -22,3 +22,5 @@ Imports:
     stats
 URL: https://github.com/SheridanLGrant/targetedordertest
 BugReports: https://github.com/SheridanLGrant/targetedordertest/issues
+Depends: 
+    R (>= 2.10)
