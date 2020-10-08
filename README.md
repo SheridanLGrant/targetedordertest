@@ -26,7 +26,7 @@ are implemented in this package.
 <!-- ``` -->
 
 Until this package is accepted into CRAN, you can install it with
-`install_github(SheridanLGrant/targetedordertest)`.
+`devtools::install_github('SheridanLGrant/targetedordertest')`.
 
 ## Example
 

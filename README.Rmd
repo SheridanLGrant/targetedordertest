@@ -30,7 +30,7 @@ Targeted tests for orderings seek to reject the null hypothesis of uniform rando
 <!-- install.packages("targetedordertest") -->
 <!-- ``` -->
 
-Until this package is accepted into CRAN, you can install it with `install_github(SheridanLGrant/targetedordertest)`.
+Until this package is accepted into CRAN, you can install it with `devtools::install_github('SheridanLGrant/targetedordertest')`.
 
 ## Example
 
